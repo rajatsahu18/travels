@@ -62,7 +62,7 @@ export const Testimonial = () => {
         <div className="d-flex align-items-center gap-4 mt-3">
             <img src={ava02} alt="" className="w-25 h-25 rounded-2" />
             <div>
-                <h6 className="mb-0 mt-3">John Doe</h6>
+                <h6 className="mb-0 mt-3">Lia Franklin</h6>
                 <p>Customer</p>
             </div>
         </div>
@@ -83,6 +83,23 @@ export const Testimonial = () => {
             </div>
         </div>
       </div>
+
+      <div className="testimonial py-4 px-3">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis nihil
+          nesciunt itaque mollitia dolor tempore velit! Architecto quae cumque,
+          voluptas asperiores doloribus repellat doloremque pariatur in tenetur.
+          Fugiat, expedita culpa.
+        </p>
+        <div className="d-flex align-items-center gap-4 mt-3">
+            <img src={ava02} alt="" className="w-25 h-25 rounded-2" />
+            <div>
+                <h6 className="mb-0 mt-3">Lia Franklin</h6>
+                <p>Customer</p>
+            </div>
+        </div>
+      </div>
+
     </Slider>
   );
 };

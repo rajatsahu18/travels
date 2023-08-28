@@ -12,6 +12,7 @@ import { FeaturedTourList } from "../components/Featured-tours/FeaturedTourList"
 import experienceImg from '../assets/images/experience.png'
 import { MasonryImagesGallery } from "../components/Image-gallery/MasonryImagesGallery";
 import { Testimonial } from "../components/Testimonial/Testimonial";
+import { Newsletter } from "../shared/Newsletter";
 
 export const Home = () => {
   return (
@@ -27,7 +28,7 @@ export const Home = () => {
                 </div>
                 <h1>
                   Traveling opens the door to creating
-                  <span className="highlight">memories</span>
+                  <span className="highlight"> memories</span>
                 </h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi
@@ -145,6 +146,8 @@ export const Home = () => {
           </Row>
         </Container>
       </section>
+
+      <Newsletter />
     </>
   );
 };
