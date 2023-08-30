@@ -27,7 +27,7 @@ export const TourCard = ({ tour }) => {
               {totalRating === 0 ? (
                 "Not Rated"
               ) : (
-                <span>({reviews.length})</span>
+                <span>({reviews?.length})</span>
               )}
             </span>
           </div>
