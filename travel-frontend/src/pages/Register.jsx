@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState,useContext} from 'react'
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import registerImg from '../assets/images/register.png';
 import userIcon from '../assets/images/user.png'
 import '../styles/auth.css'
+import { AuthContext } from './../context/AuthContext'; 
+import { BASE_URL } from '../utils/config'
 
 export const Register = () => {
 
@@ -14,8 +16,29 @@ export const Register = () => {
     password: undefined
   });
 
-  const handleClick = e => {
+  const {dispatch} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const handleClick = async (e) => {
     e.preventDefault()
+
+    try {
+      const res = await fetch(`${BASE_URL}auth/register`, {
+        method: 'post',
+        headers: {
+          'content-type' : 'application/json'
+        },
+        body: JSON.stringify(credentials)
+      })
+      const result = await res.json()
+
+      if(!res.ok) alert(result.message);
+
+      dispatch({type: 'REGISTER_SUCCESS'})
+      navigate('/login')
+    } catch (err) {
+      alert(err.message)
+    }
   }
  
   const handleChange = (e) => {
@@ -48,7 +71,7 @@ export const Register = () => {
                   <FormGroup>
                     <input type="password" placeholder='Password' required id='password' onChange={handleChange} />
                   </FormGroup>
-                  <Button className='btn secondary__btn auth__btn' type='submit'>Login</Button>
+                  <Button className='btn secondary__btn auth__btn' type='submit'>Register</Button>
                 </Form>
 
                 <p>Already have an account? <Link to='/login'>Login</Link> </p> 
