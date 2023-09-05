@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CommonSection } from "../shared/CommonSection";
 import "../styles/tour.css";
-import tourData from "../assets/data/tours";
+// import tourData from "../assets/data/tours";
 import { Col, Container, Row } from "reactstrap";
 import { SearchBar } from "../shared/SearchBar";
 import { TourCard } from "../shared/TourCard";
@@ -41,7 +41,7 @@ export const Tours = () => {
           {!loading && !error && (
             <Row>
               {tours?.map((tour) => (
-                <Col lg="3" className="mb-4" key={tour._id}>
+                <Col lg="3" md='6' sm='6' className="mb-4" key={tour._id}>
                   <TourCard tour={tour} />
                 </Col>
               ))}

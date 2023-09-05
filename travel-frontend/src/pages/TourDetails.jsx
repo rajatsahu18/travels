@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useContext } from "react";
 import "../styles/tour-details.css";
 import { Container, Row, Col, Form, ListGroup } from "reactstrap";
 import { useParams } from "react-router-dom";
-import tourData from "../assets/data/tours";
+// import tourData from "../assets/data/tours";
 import { calculateAvgRating } from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
 import { Booking } from "../components/Booking/Booking";

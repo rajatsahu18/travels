@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "./booking.css";
 import {
   Form,
@@ -8,12 +8,16 @@ import {
   Button,
 } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import {AuthContext} from '../../context/AuthContext'
+import {BASE_URL} from '../../utils/config'
 
 export const Booking = ({ tour, avgRating }) => {
-  const { price, reviews } = tour;
-  const [credentials, setCredentials] = useState({
-    userId: "01",
-    userEmail: "example@gmail.com",
+  const { price, reviews,title } = tour;
+  const {user} = useContext(AuthContext)
+  const [booking, setBooking] = useState({
+    userId: user && user._id,
+    userEmail: user && user.email,
+    tourName: title,
     fullName: "",
     phone: "",
     guestSize: 1,
@@ -22,17 +26,39 @@ export const Booking = ({ tour, avgRating }) => {
   const navigate = useNavigate()
 
   const handleChange = (e) => {
-    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    setBooking((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
+    console.log(booking)
+    try {
+      if(!user || user === undefined || user === null) {
+        return alert('Please sign in')
+      }
 
-    navigate('/thank-you')
+      const res = await fetch(`${BASE_URL}booking`, {
+        method: 'post',
+        headers: {
+          'content-type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(booking),
+      })
+
+      const result = await res.json()
+      if(!res.ok) {
+        return alert(result.message)
+      }
+      navigate('/thank-you')
+    } catch (err) {
+      alert(err.message)
+    }
+    
   };
 
   const serviceFee = 10;
-  const totalAmount = Number(price) * Number(credentials.guestSize) + Number(serviceFee)
+  const totalAmount = Number(price) * Number(booking.guestSize) + Number(serviceFee)
 
   return (
     <div className="booking">
