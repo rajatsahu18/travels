@@ -1,4 +1,4 @@
-import Tour from "../models/Tour.js";
+  import Tour from "../models/Tour.js";
 
 export const createTour = async (req, res) => {
   const newTour = new Tour(req.body);
@@ -62,7 +62,8 @@ export const getSingleTour = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const tour = await Tour.findById(id).populate("reviews");
+    const tour = await Tour.findById(id)
+     .populate("reviews");
 
     res.status(200).json({
       success: true,
@@ -79,7 +80,6 @@ export const getSingleTour = async (req, res) => {
 
 export const getAllTour = async (req, res) => {
   const page = parseInt(req.query.page);
-  console.log(page);
   try {
     const tours = await Tour.find({})
       .populate("reviews")
@@ -111,7 +111,8 @@ export const getTourBySearch = async (req, res) => {
       city,
       distance: { $gte: distance },
       maxGroupSize: { $gte: maxGroupSize },
-    }).populate("reviews");
+    })
+     .populate("reviews");
 
     res.status(200).json({
       success: true,
@@ -129,7 +130,7 @@ export const getTourBySearch = async (req, res) => {
 export const getFeaturedTours = async (req, res) => {
   try {
     const tours = await Tour.find({ featured: true })
-      .populate("reviews")
+       .populate("reviews")
       .limit(8);
 
     res.status(200).json({

@@ -1,8 +1,10 @@
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const verifyToken = (req, res, next) => {
-  const token = res.cookies.accessToken;
-
+  const token = req.cookies.accessToken;
   if (!token) {
     return res
       .status(401)

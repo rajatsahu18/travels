@@ -28,7 +28,7 @@ const connect = async () => {
       useUnifiedTopology: true,
     });
 
-    console.log("MongoDB database connected");
+    console.log("MongoDB database connected", port);
   } catch (error) {
     console.log("MongoDB database connection failed", port);
   }

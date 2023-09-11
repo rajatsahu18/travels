@@ -7,9 +7,11 @@ import {
 } from "../controllers/bookingController.js";
 
 const router = express.Router();
-
-router.post("/", verifyUser, createBooking);
-router.get("/:id", verifyUser, getBooking);
-router.get("/", verifyAdmin, getAllBooking);
+// verifyUser,
+router.post("/",verifyUser,  createBooking);
+// verifyUser,
+router.get("/:id",verifyUser,  getBooking);
+// verifyAdmin,
+router.get("/",verifyAdmin,  getAllBooking);
 
 export default router;
