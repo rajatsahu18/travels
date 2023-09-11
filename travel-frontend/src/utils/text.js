@@ -21,7 +21,7 @@ export const TEXT = {
   LIA: 'Lia Franklin',
   CUSTOMER: 'Customer',
   LOGIN: 'Login',
-  SIGNUP: "Sign up",
+  SIGNUP: "Signup",
   LOGOUT:  'Logout',
   LOCATION: 'Location',
   DISTANCE: 'Distance',

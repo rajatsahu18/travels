@@ -8,6 +8,7 @@ import { TourDetails } from '../pages/TourDetails';
 import { SearchResultList } from '../pages/SearchResultList';
 import { Thankyou } from '../pages/Thankyou';
 import { About } from '../pages/About';
+import { Gallery } from '../pages/Gallery';
 
 export const AllRoutes = () => {
   return (
@@ -21,6 +22,7 @@ export const AllRoutes = () => {
         <Route path='/tours/:id'  element={<TourDetails /> } />
         <Route path='/tours/search'  element={<SearchResultList /> } />
         <Route path='/thank-you'  element={<Thankyou /> } />
+        <Route path='/gallery'  element={<Gallery /> } />
     </Routes>
   )
 }

@@ -2,7 +2,7 @@ import React, {useState,useContext, useEffect} from 'react'
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import {Link, useNavigate} from 'react-router-dom';
 import registerImg from '../assets/images/register.png';
-import userIcon from '../assets/images/user.png'
+import avatar from '../assets/images/male-avatar.png'
 import '../styles/auth.css'
 import { AuthContext } from './../context/AuthContext'; 
 import { BASE_URL } from '../utils/config'
@@ -57,12 +57,12 @@ export const Register = () => {
           <Col lg='8' className='m-auto'>
             <div className="login__container d-flex justify-content-between">
               <div className="login__img">
-                <img src={registerImg} alt="" />
+                <img src={registerImg} alt="avatar" />
               </div>
 
               <div className="login__form">
                 <div className="user">
-                  <img src={userIcon} alt="" />
+                  <img src={avatar} alt="avatar" />
                 </div>
                 <h2>{TEXT.SIGNUP}</h2>
 
