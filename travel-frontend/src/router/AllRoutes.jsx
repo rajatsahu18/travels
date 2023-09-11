@@ -7,12 +7,14 @@ import { Tours } from '../pages/Tours';
 import { TourDetails } from '../pages/TourDetails';
 import { SearchResultList } from '../pages/SearchResultList';
 import { Thankyou } from '../pages/Thankyou';
+import { About } from '../pages/About';
 
 export const AllRoutes = () => {
   return (
     <Routes>
         <Route path='/'  element={<Home /> } />
         <Route path='/home'  element={<Home /> } />
+        <Route path='/about'  element={<About /> } />
         <Route path='/login'  element={<Login /> } />
         <Route path='/register'  element={<Register /> } />
         <Route path='/tours'  element={<Tours /> } />

@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react'
+import React, {useState,useContext, useEffect} from 'react'
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import {Link, useNavigate} from 'react-router-dom';
 import registerImg from '../assets/images/register.png';
@@ -6,6 +6,7 @@ import userIcon from '../assets/images/user.png'
 import '../styles/auth.css'
 import { AuthContext } from './../context/AuthContext'; 
 import { BASE_URL } from '../utils/config'
+import { TEXT } from '../utils/text';
 
 export const Register = () => {
 
@@ -45,6 +46,10 @@ export const Register = () => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <section>
       <Container>
@@ -59,7 +64,7 @@ export const Register = () => {
                 <div className="user">
                   <img src={userIcon} alt="" />
                 </div>
-                <h2>Register</h2>
+                <h2>{TEXT.SIGNUP}</h2>
 
                 <Form onSubmit={handleClick}>
                 <FormGroup>
@@ -71,10 +76,10 @@ export const Register = () => {
                   <FormGroup>
                     <input type="password" placeholder='Password' required id='password' onChange={handleChange} />
                   </FormGroup>
-                  <Button className='btn secondary__btn auth__btn' type='submit'>Register</Button>
+                  <Button className='btn secondary__btn auth__btn' type='submit'>{TEXT.SIGNUP}</Button>
                 </Form>
 
-                <p>Already have an account? <Link to='/login'>Login</Link> </p> 
+                <p>{TEXT.ALREADY_HAVE_AN_ACCOUNT} <Link to='/login'>{TEXT.LOGIN}</Link> </p> 
               </div>
             </div>
           </Col>

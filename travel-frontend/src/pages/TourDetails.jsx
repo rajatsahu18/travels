@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import "../styles/tour-details.css";
 import { Container, Row, Col, Form, ListGroup } from "reactstrap";
-import { useParams } from "react-router-dom";
-// import tourData from "../assets/data/tours";
+import {useParams } from "react-router-dom";
+//import tourData from "../assets/data/tours";
 import { calculateAvgRating } from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
 import { Booking } from "../components/Booking/Booking";
@@ -10,9 +10,10 @@ import { Newsletter } from "../shared/Newsletter";
 import { useFetch } from "../hooks/useFetch";
 import { BASE_URL } from "../utils/config";
 import { AuthContext } from "../context/AuthContext";
+import { TEXT } from "../utils/text";
 
 export const TourDetails = () => {
-  const { id } = useParams();
+  const {id}  = useParams();
   const reviewMsgRef = useRef("");
   const [tourRating, setTourRating] = useState(null);
 
@@ -21,6 +22,12 @@ export const TourDetails = () => {
   // fetch data from database
 
   const { data: tour, loading, error } = useFetch(`${BASE_URL}tours/${id}`);
+  // const { data: tour, loading, error } = useFetch(`${BASE_URL}tours/search/getFeaturedTours`);
+  // useEffect(()=>{
+  //   if (!user || user === undefined || user === null) {
+  //     alert("To view tours, first sign in please");
+  //   }
+  // },[]);
 
   const {
     photo,
@@ -33,6 +40,7 @@ export const TourDetails = () => {
     address,
     maxGroupSize,
   } = tour;
+  
 
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
@@ -86,7 +94,7 @@ export const TourDetails = () => {
             <Row>
               <Col lg="8">
                 <div className="tour__content">
-                  <img src={photo} alt="" />
+                  <img src={photo} alt="img" />
 
                   <div className="tour__info">
                     <h2>{title}</h2>
@@ -116,38 +124,37 @@ export const TourDetails = () => {
                       </span>
 
                       <span>
-                        <i class="ri-money-dollar-circle-line"></i> {price} /per
-                        person
+                        <i class="ri-money-dollar-circle-line"></i> {price} {TEXT.PER_PERSON}
                       </span>
                       <span>
-                        <i class="ri-map-pin-2-line"></i> {distance} km/hr
+                        <i class="ri-map-pin-2-line"></i> {distance} {TEXT.KM}
                       </span>
                       <span>
-                        <i class="ri-group-line"></i> {maxGroupSize} people
+                        <i class="ri-group-line"></i> {maxGroupSize} {TEXT.PEOPLE}
                       </span>
                     </div>
-                    <h5>Description</h5>
+                    <h5>{TEXT.DESCRIPTION}</h5>
                     <p>{desc}</p>
                   </div>
 
                   <div className="tour__reviews mt-4">
-                    <h4>Reviews ({reviews?.length} reviews)</h4>
+                    <h4>{TEXT.CAPITAL_REVIEW} ({reviews?.length} {TEXT.SMALL_REVIEW})</h4>
 
                     <Form onSubmit={submitHandler}>
                       <div clasRajatsName="d-flex align-items-center gap-3 mb-4 rating__group">
-                        <span onClick={() => setTourRating(1)}>
+                        <span onClick={() => setTourRating(1)} style={{cursor:"pointer"}}>
                           1 <i class="ri-star-s-fill"></i>
                         </span>
-                        <span onClick={() => setTourRating(2)}>
+                        <span onClick={() => setTourRating(2)}  style={{cursor:"pointer"}}>
                           2 <i class="ri-star-s-fill"></i>
                         </span>
-                        <span onClick={() => setTourRating(3)}>
+                        <span onClick={() => setTourRating(3)}  style={{cursor:"pointer"}}>
                           3 <i class="ri-star-s-fill"></i>
                         </span>
-                        <span onClick={() => setTourRating(4)}>
+                        <span onClick={() => setTourRating(4)}  style={{cursor:"pointer"}}>
                           4 <i class="ri-star-s-fill"></i>
                         </span>
-                        <span onClick={() => setTourRating(5)}>
+                        <span onClick={() => setTourRating(5)}  style={{cursor:"pointer"}}>
                           5 <i class="ri-star-s-fill"></i>
                         </span>
                       </div>
@@ -163,7 +170,7 @@ export const TourDetails = () => {
                           className="btn primary__btn text-white"
                           type="submit"
                         >
-                          Submit
+                          {TEXT.SUBMIT}
                         </button>
                       </div>
                     </Form>

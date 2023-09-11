@@ -4,6 +4,7 @@ import { Container, Row, Button } from "reactstrap";
 import logo from "../../assets/images/logo.png";
 import "./header.css";
 import { AuthContext } from "../../context/AuthContext";
+import { TEXT } from "../../utils/text";
 
 const nav__links = [
   {
@@ -37,9 +38,9 @@ export const Header = () => {
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
       ) {
-        headerRef.current.classList.add("sticky__header");
+        headerRef?.current?.classList?.add("sticky__header");
       } else {
-        headerRef.current.classList.remove("sticky__header");
+        headerRef?.current?.classList?.remove("sticky__header");
       }
     });
   };
@@ -50,16 +51,16 @@ export const Header = () => {
     return window.removeEventListener("scroll", stickyHeaderFunc);
   });
 
-  const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
+  const toggleMenu = () => menuRef?.current?.classList?.toggle("show__menu");
 
   return (
     <header className="header" ref={headerRef}>
       <Container>
         <Row>
           <div className="nav__wrapper d-flex align-items-center justify-content-between">
-            <div className="logo">
+            <Link to="/" className="logo">
               <img src={logo} alt="logo" />
-            </div>
+            </Link>
 
             <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <ul className="menu d-flex align-items-center gap-5">
@@ -84,22 +85,22 @@ export const Header = () => {
                   <>
                     <h5 className="mb-0">{user.username}</h5>
                     <Button className="btn btn-dark" onClick={logout}>
-                      Logout
+                      {TEXT.LOGOUT}
                     </Button>
                   </>
                 ) : (
                   <>
-                    <Button className="btn primary__btn">
-                      <Link to="/login">Login</Link>
-                    </Button>
-                    <Button className="btn primary__btn">
-                      <Link to="/register">Register</Link>
-                    </Button>
+                    <Link to="/login">
+                      <Button className="btn primary__btn">{TEXT.LOGIN}</Button>
+                    </Link>
+                    <Link to="/register">
+                      <Button className="btn primary__btn">{TEXT.SIGNUP}</Button>
+                    </Link>
                   </>
                 )}
               </div>
 
-              <span className="mobile__menu" onClick={toggleMenu} >
+              <span className="mobile__menu" onClick={toggleMenu}>
                 <i class="ri-menu-line"></i>
               </span>
             </div>
