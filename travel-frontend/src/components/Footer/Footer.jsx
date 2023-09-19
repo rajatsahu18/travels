@@ -26,12 +26,12 @@ const quick__links2 = [
     display: "Gallery",
   },
   {
-    path: "/login",
-    display: "Login",
+    path: "#",
+    display: "Reviews",
   },
   {
-    path: "/register",
-    display: "Register",
+    path: "#",
+    display: "Membership",
   },
 ];
 

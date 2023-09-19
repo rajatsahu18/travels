@@ -4,7 +4,7 @@ const initial_state = {
   user:
     localStorage.getItem("user") === undefined
       ? JSON.parse(localStorage.getItem("user"))
-      : null,
+      : JSON.parse(localStorage.getItem("user")),
   loading: false,
   error: null,
 };
