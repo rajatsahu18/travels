@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState, useContext } from "react";
 import "../styles/tour-details.css";
 import { Container, Row, Col, Form, ListGroup } from "reactstrap";
 import {useParams } from "react-router-dom";
-//import tourData from "../assets/data/tours";
 import { calculateAvgRating } from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
 import { Booking } from "../components/Booking/Booking";
@@ -141,7 +140,7 @@ export const TourDetails = () => {
                     <h4>{TEXT.CAPITAL_REVIEW} ({reviews?.length} {TEXT.SMALL_REVIEW})</h4>
 
                     <Form onSubmit={submitHandler}>
-                      <div clasRajatsName="d-flex align-items-center gap-3 mb-4 rating__group">
+                      <div className="d-flex align-items-center gap-3 mb-4 rating__group">
                         <span onClick={() => setTourRating(1)} style={{cursor:"pointer"}}>
                           1 <i class="ri-star-s-fill"></i>
                         </span>
