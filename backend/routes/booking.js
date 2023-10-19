@@ -8,9 +8,9 @@ import {
 
 const router = express.Router();
 // verifyUser,
-router.post("/",verifyUser,  createBooking);
+router.post("/",  createBooking);
 // verifyUser,
-router.get("/:id",verifyUser,  getBooking);
+router.get("/:id",  getBooking);
 // verifyAdmin,
 router.get("/",verifyAdmin,  getAllBooking);
 

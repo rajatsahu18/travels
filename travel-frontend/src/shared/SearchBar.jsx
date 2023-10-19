@@ -28,7 +28,7 @@ export const SearchBar = () => {
 
     const result = await res.json()
       navigate(
-        `${BASE_URL}tours/search/getTourBySearch?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`,
+        `tours/search?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`,
         { state: result.data }
     );
   };
