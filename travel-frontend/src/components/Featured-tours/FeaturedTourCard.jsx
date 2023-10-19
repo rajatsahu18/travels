@@ -5,7 +5,7 @@ import { calculateAvgRating } from "../../utils/avgRating";
 import { TEXT } from "../../utils/text";
 
 export const FeaturedTourCard = ({ tour }) => {
-  const { _id, title, city, photo, price, featured, reviews, maxGroupSize } =
+  const { title, city, photo, price, featured, reviews, maxGroupSize } =
     tour;
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
