@@ -62,7 +62,7 @@ export const Booking = ({ tour, avgRating }) => {
         </h3>
         <span className="tour__rating d-flex align-items-center">
           <i
-            class="ri-star-fill"
+            className="ri-star-fill"
             style={{ color: "var(--secondary-color)" }}
           ></i>{" "}
           {avgRating === 0 ? null : avgRating} ({reviews?.length})
@@ -113,7 +113,7 @@ export const Booking = ({ tour, avgRating }) => {
         <ListGroup>
           <ListGroupItem className="border-0 px-0">
             <h5 className="d-flex align-items-center gap-1">
-            ₹{price} <i class="ri-close-line"></i> {TEXT.ONE_PERSON}
+            ₹{price} <i className="ri-close-line"></i> {TEXT.ONE_PERSON}
             </h5>
             <span>₹ {price}</span>
           </ListGroupItem>

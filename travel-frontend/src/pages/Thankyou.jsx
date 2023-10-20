@@ -16,7 +16,7 @@ export const Thankyou = () => {
           <Col lg="12" className="pt-5 text-center">
             <div className="thank__you">
               <span>
-                <i class="ri-checkbox-circle-line"></i>
+                <i className="ri-checkbox-circle-line"></i>
               </span>
               <h1 className="mb-3 fw-semibold">{TEXT.THANK_YOU}</h1>
               <h3 className="mb-4">{TEXT.BOOKED}</h3>

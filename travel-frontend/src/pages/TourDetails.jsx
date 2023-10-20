@@ -101,7 +101,7 @@ export const TourDetails = () => {
                     <div className="d-flex  align-items-center gap-5">
                       <span className="tour__rating d-flex align-items-center gap-1">
                         <i
-                          class="ri-star-fill"
+                          className="ri-star-fill"
                           style={{ color: "var(--secondary-color)" }}
                         ></i>{" "}
                         {avgRating === 0 ? null : avgRating}{" "}
@@ -119,17 +119,17 @@ export const TourDetails = () => {
 
                     <div className="tour__extra-details">
                       <span>
-                        <i class="ri-map-pin-2-line"></i> {city}
+                        <i className="ri-map-pin-2-line"></i> {city}
                       </span>
 
                       <span>
-                        <i class="ri-money-dollar-circle-line"></i> {price} {TEXT.PER_PERSON}
+                        <i className="ri-money-dollar-circle-line"></i> {price} {TEXT.PER_PERSON}
                       </span>
                       <span>
-                        <i class="ri-map-pin-2-line"></i> {distance} {TEXT.KM}
+                        <i className="ri-map-pin-2-line"></i> {distance} {TEXT.KM}
                       </span>
                       <span>
-                        <i class="ri-group-line"></i> {maxGroupSize} {TEXT.PEOPLE}
+                        <i className="ri-group-line"></i> {maxGroupSize} {TEXT.PEOPLE}
                       </span>
                     </div>
                     <h5>{TEXT.DESCRIPTION}</h5>
@@ -142,19 +142,19 @@ export const TourDetails = () => {
                     <Form onSubmit={submitHandler}>
                       <div className="d-flex align-items-center gap-3 mb-4 rating__group">
                         <span onClick={() => setTourRating(1)} style={{cursor:"pointer"}}>
-                          1 <i class="ri-star-s-fill"></i>
+                          1 <i className="ri-star-s-fill"></i>
                         </span>
                         <span onClick={() => setTourRating(2)}  style={{cursor:"pointer"}}>
-                          2 <i class="ri-star-s-fill"></i>
+                          2 <i className="ri-star-s-fill"></i>
                         </span>
                         <span onClick={() => setTourRating(3)}  style={{cursor:"pointer"}}>
-                          3 <i class="ri-star-s-fill"></i>
+                          3 <i className="ri-star-s-fill"></i>
                         </span>
                         <span onClick={() => setTourRating(4)}  style={{cursor:"pointer"}}>
-                          4 <i class="ri-star-s-fill"></i>
+                          4 <i className="ri-star-s-fill"></i>
                         </span>
                         <span onClick={() => setTourRating(5)}  style={{cursor:"pointer"}}>
-                          5 <i class="ri-star-s-fill"></i>
+                          5 <i className="ri-star-s-fill"></i>
                         </span>
                       </div>
 
@@ -176,8 +176,8 @@ export const TourDetails = () => {
 
                     <ListGroup>
                       {reviews?.map((review) => (
-                        <div className="review__item">
-                          <img src={avatar} alt="" />
+                        <div className="review__item" key={review._id}>
+                          <img src={avatar} alt="avatar" />
 
                           <div className="w-100">
                             <div className="d-flex align-items-center justify-content-between">
@@ -190,7 +190,7 @@ export const TourDetails = () => {
                                 </p>
                               </div>
                               <span className="d-flex align-items-center">
-                                {review?.rating} <i class="ri-star-s-fill"></i>
+                                {review?.rating} <i className="ri-star-s-fill"></i>
                               </span>
                             </div>
                             <h6>{review?.reviewText}</h6>

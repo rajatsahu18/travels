@@ -1,5 +1,6 @@
 const tours = [
-  {
+  { 
+    "id": 1,
     "title": "Machu Picchu",
     "city": "Cusco",
     "address": "Somewhere in Peru",
@@ -7,7 +8,7 @@ const tours = [
     "price": 99,
     reviews: [
       {
-        name: "jhon doe",
+        name: "John doe",
         rating: 4.6,
       },
     ],
@@ -17,7 +18,8 @@ const tours = [
     "photo": "https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     "featured": true
   },
-  {
+  { 
+    "id": 2,
     "title": "Cappadocia, Turkey",
     "city": "Nevsehir",
     "address": "Somewhere in Turkey",
@@ -25,7 +27,7 @@ const tours = [
     "price": 99,
     reviews: [
       {
-        name: "jhon doe",
+        name: "John doe",
         rating: 4.6,
       },
     ],
@@ -35,7 +37,8 @@ const tours = [
     "photo": "https://images.unsplash.com/photo-1569530593440-e48dc137f7d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
     "featured": true
   },
-  {
+  { 
+    "id": 3,
     "title": "The Great Wall of China",
     "city": "Liaoning",
     "address": "Somewhere in China",
@@ -43,7 +46,7 @@ const tours = [
     "price": 99,
     reviews: [
       {
-        name: "jhon doe",
+        name: "John doe",
         rating: 4.6,
       },
     ],
@@ -53,7 +56,8 @@ const tours = [
     "photo": "https://plus.unsplash.com/premium_photo-1664304488525-44a96338c0cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80",
     "featured": true
   },
-  {
+  { 
+    "id": 4,
     "title": "Santorini, Greece",
     "city": "Oia",
     "address": "Somewhere in Greece",
@@ -61,7 +65,7 @@ const tours = [
     "price": 99,
     reviews: [
       {
-        name: "jhon doe",
+        name: "John doe",
         rating: 4.6,
       },
     ],
@@ -71,7 +75,8 @@ const tours = [
     "photo": "https://images.unsplash.com/photo-1548580392-8d9c772d854e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
     "featured": true
   },
-  {
+  { 
+    "id": 5,
     "title": "The Grand Canyon, USA,",
     "city": "Las Vegas",
     "address": "Somewhere in USA",
@@ -79,7 +84,7 @@ const tours = [
     "price": 99,
     reviews: [
       {
-        name: "jhon doe",
+        name: "John doe",
         rating: 4.6,
       },
     ],
@@ -89,7 +94,8 @@ const tours = [
     "photo": "https://plus.unsplash.com/premium_photo-1689635690273-849284a10734?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
     "featured": true
   },
-  {
+  { 
+    "id": 6,
     "title": "Venice, Italy",
     "city": "Venice City",
     "address": "Somewhere in Italy",
@@ -97,7 +103,7 @@ const tours = [
     "price": 99,
     reviews: [
       {
-        name: "jhon doe",
+        name: "John doe",
         rating: 4.6,
       },
     ],
@@ -107,7 +113,8 @@ const tours = [
     "photo": "https://plus.unsplash.com/premium_photo-1676120651951-c84af43eaf9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
     "featured": true
   },
-  {
+  { 
+    "id": 7,
     "title": "Bora Bora, French Polynesia",
     "city": "French Polynesia",
     "address": "Somewhere in France",
@@ -115,7 +122,7 @@ const tours = [
     "price": 99,
     reviews: [
       {
-        name: "jhon doe",
+        name: "John doe",
         rating: 4.6,
       },
     ],
@@ -125,7 +132,8 @@ const tours = [
     "photo": "https://images.unsplash.com/photo-1500930287596-c1ecaa373bb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     "featured": true
   },
-  {
+  { 
+    "id": 8,
     "title": "Kyoto, Japan",
     "city": "Kansai region of Japan",
     "address": "Somewhere in Japan",
@@ -133,7 +141,7 @@ const tours = [
     "price": 99,
     reviews: [
       {
-        name: "jhon doe",
+        name: "John doe",
         rating: 4.6,
       },
     ],
